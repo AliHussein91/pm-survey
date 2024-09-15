@@ -1,0 +1,56 @@
+<section class="survey-wrapper" #wrapper>
+  <div class="survey-header">
+    <h1 class="title">
+      Achieve Your Dream Figure with Quick and Effective Workouts.
+    </h1>
+    <app-progress-bar [progress]="progress" />
+  </div>
+  <section class="survey-questions" #scrollWrapper>
+    @for (entry of questionList.questions; track $index) {
+    <div class="question-wrapper">
+      <div class="question-text">
+        <h2 class="question">{{ entry.question }}</h2>
+        <p class="question-note">{{ entry.note }}</p>
+      </div>
+      <div class="question-answers">
+        <app-radio-btn
+          [answers]="entry.answers"
+          [name]="entry.question"
+          (change)="collectAnswers($event, entry.id)"
+        />
+      </div>
+    </div>
+    }
+  </section>
+  <div class="questions-nav">
+    <span class="left" (click)="scrollLeft()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#575757"
+          fill-rule="evenodd"
+          d="M17.5 17.5L9.25 12l8.25-5.5l-1-1.5L6 12l10.5 7z"
+        />
+      </svg>
+    </span>
+    <p class="counter">{{ currentQuestion }}/{{ questionsCount }}</p>
+    <span class="right" (click)="scrollRight()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#575757"
+          fill-rule="evenodd"
+          d="m6.5 17.5l8.25-5.5L6.5 6.5l1-1.5L18 12L7.5 19z"
+        />
+      </svg>
+    </span>
+  </div>
+</section>

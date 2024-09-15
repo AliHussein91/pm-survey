@@ -1,0 +1,66 @@
+@use "../../../scss/abstract/" as *;
+
+.container {
+  background-color: white;
+  margin: 4rem 1.6rem;
+  border-radius: 2.4rem;
+  @include grid($gap: 3.2rem);
+  text-align: center;
+
+  h1 {
+    @include textLg;
+    padding: 2.4rem 1.6rem 0rem;
+  }
+  .news {
+    @include grid();
+    h2 {
+        @include textLgs;
+        font-weight: 700;
+    }
+    .news-details{
+        @include grid($gap: 1.2rem);
+        @include textSm;
+        padding: 0 1.6rem;
+    }
+  }
+  .btn {
+    display: block;
+    padding: 1.6rem 6.6rem;
+    margin: 0 1.6rem 2.4rem;
+    background: $backgroundGradiant;
+    color: white;
+    @include textXs;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 1.6rem;
+  }
+}
+
+
+@include large {
+  .container {
+    max-width: 46%;
+    margin: 9.2rem auto;
+    gap: 4rem;
+    h1 {
+      @include lg-textLg;
+      padding: 4rem 5.2rem 0;
+
+    }
+    .news {
+      padding: 0 5.2rem;
+      gap: 2.4rem;
+      h2 {
+        @include lg-textLg;
+      }
+      .news-details {
+        padding: 0 5rem;
+        @include lg-textSm;
+
+      }
+    }
+    .btn {
+      @include lg-textMd;
+    }
+  }
+}

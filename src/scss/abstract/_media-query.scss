@@ -1,6 +1,6 @@
 $mobile: 390px;
-$tablet: 650px;
-$pc: 1920px;
+$pc: 768px;
+$large: 1920px;
 
 @mixin mobile {
   @media (min-width: $mobile) {
@@ -8,14 +8,14 @@ $pc: 1920px;
   }
 }
 
-@mixin tablet {
-  @media (min-width: $tablet) {
+@mixin pc {
+  @media (min-width: $pc) {
     @content;
   }
 }
 
-@mixin pc {
-  @media (min-width: $pc) {
+@mixin large {
+  @media (min-width: $large) {
     @content;
   }
 }

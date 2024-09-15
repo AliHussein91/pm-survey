@@ -1,0 +1,42 @@
+@use "../../../../scss/abstract/" as *;
+
+a {
+  display: block;
+  width: 100%;
+  padding: 1.6rem 4.8rem;
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include textSm;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  transition: all 0.5s ease;
+  .circle {
+    position: absolute;
+    left: 2.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+    border-radius: 50%;
+  }
+  &:hover {
+    background-color: $colorPrimary;
+    color: white;
+    transition: all 0.5s ease;
+    .circle {
+        border: none;
+        background-color: white;
+        transition: all 0.5s ease;
+    }
+  }
+
+}

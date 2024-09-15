@@ -1,0 +1,16 @@
+<div class="radio-group">
+  @for (answer of answers; track $index) {
+
+  <label [for]="name + $index" class="answer">
+    <input
+      type="radio"
+      [name]="name"
+      class="radio"
+      [id]="name + $index"
+      [value]="answer"
+      (change)="changed($event)"
+    />
+    {{ answer }}
+  </label>
+  }
+</div>

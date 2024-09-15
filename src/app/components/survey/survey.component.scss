@@ -1,0 +1,106 @@
+@use "../../../scss/abstract/" as *;
+
+:host {
+  @include grid();
+  user-select: none;
+  .survey-wrapper {
+    @include grid($gap: 3.2rem);
+    margin: 7.7rem 1.6rem;
+    background-color: white;
+    border-radius: 2.4rem;
+    text-align: center;
+    .survey-header {
+      @include grid();
+      padding: 2.4rem 1.6rem 0rem;
+      .title {
+        @include textLg;
+      }
+    }
+    .survey-questions {
+      scroll-snap-type: x mandatory;
+      width: 100%;
+      display: flex;
+      overflow: auto;
+      height: min-content;
+      .question-wrapper {
+        min-width: 100%;
+        height: min-content;
+        scroll-snap-align: start;
+        @include grid($gap: 3.2rem);
+        padding: 0 1.6rem;
+        .question-text {
+          @include grid($gap: 1.2rem);
+          font-weight: 500;
+          .question {
+            @include textMd;
+          }
+          .question-note {
+            @include textXs;
+            color: $colorGrey;
+          }
+        }
+        .question-answers {
+          @include grid($gap: 1.2rem);
+          width: 100%;
+          padding-bottom: 2.4rem;
+          app-radio-btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .questions-nav {
+      width: calc(100% - 3.2rem);
+      height: 5.6rem;
+      border-top: 1px solid #e0e0e0;
+      padding: 2.4rem 1.6rem;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+      .counter {
+        @include textXs;
+        color: $colorGrey;
+      }
+    }
+  }
+}
+
+@include large {
+  :host {
+    .survey-wrapper {
+      max-width: 44%;
+      .survey-header {
+        padding: 4rem 5.2rem;
+        @include lg-textLg;
+      }
+      .survey-questions {
+        height: min-content;
+        .question-wrapper {
+          padding: 0 5.2rem;
+          .question-text {
+            .question {
+              @include lg-textMd;
+            }
+            .question-note {
+              @include lg-textSm;
+            }
+          }
+          .question-answers {
+            width: 80%;
+            padding: 0;
+            padding-bottom: 3.2rem;
+            @include lg-textSm;
+          }
+        }
+      }
+      .questions-nav {
+        @include lg-textSm;
+      }
+    }
+  }
+}

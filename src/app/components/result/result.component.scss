@@ -1,0 +1,125 @@
+@use "../../../scss/abstract/" as *;
+
+:host {
+  @include grid($gap: 3rem);
+  background-image: url(../../../assets/img/woman-sm.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 514px;
+  background-attachment: scroll;
+  .calibrating {
+    padding: 6rem 1.6rem 0rem;
+    @include grid($gap: 2.4rem);
+    h1 {
+      @include textLgs;
+      font-weight: 500;
+    }
+    p {
+      @include textMd;
+    }
+  }
+  .result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 203px;
+    height: 203px;
+    // border: 10px solid #3eb8e5;
+    position: relative;
+    border-radius: 50%;
+    margin-bottom: 33rem;
+    position: relative;
+    svg {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      fill: transparent;
+      transform: rotate(-90deg);
+    }
+    svg circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      stroke: #3eb8e5;
+      stroke-width: 5;
+      transition: 1s;
+      stroke-dasharray: 615;
+      stroke-dashoffset: 615;
+    }
+    .outer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 191.55px;
+      height: 191.55px;
+      border: 20px solid #e0e0f9;
+      border-radius: 50%;
+
+      .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 7.6rem;
+        border-radius: 50%;
+        position: relative;
+        p {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: "Encode Sans Condensed", sans-serif;
+          font-weight: 900;
+          color: #3eb8e5;
+          font-size: 63.19px;
+          line-height: 78.99px;
+          .percent {
+            font-size: 28.72px;
+            line-height: 35.9px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .dot {
+    width: 11.27px;
+    height: 11.27px;
+    border-radius: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: -2px;
+    left: 47%;
+    transition: 0.5s;
+  }
+}
+
+@include large {
+  :host {
+    background-image: url(./../../../assets/img/woman-lg.png);
+    background-position: 110% 20%;
+    background-size: 60%;
+    @include grid($col: 1fr 1fr, $row: 1fr auto);
+    .calibrating {
+      padding: 0;
+      margin: 0;
+      justify-self: start;
+      align-self: start;
+      max-width: 90%;
+      margin-top: 20rem;
+      margin-left: 11rem;
+      h1 {
+        @include lg-textLgs;
+      }
+      p {
+        @include lg-textLg;
+        max-width: 70%;
+        justify-self: start;
+      }
+    }
+    .result {
+      grid-column: 1 / span 1;
+      margin-right: 20rem;
+    }
+  }
+}

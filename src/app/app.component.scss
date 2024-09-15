@@ -1,0 +1,11 @@
+@use '../scss/abstract/' as *;
+
+:host {
+    max-width: $mobile;
+}
+
+@include large {
+    :host {
+        max-width: $large;
+    }
+}

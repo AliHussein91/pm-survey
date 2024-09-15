@@ -1,0 +1,48 @@
+@use "../../../../scss/abstract/" as *;
+
+
+.answer {
+  @include textXs;
+  display: block;
+  border: 1px solid $colorBorder;
+  text-align: center;
+  padding: 2rem 4rem;
+  border-radius: 1.2rem;
+  position: relative;
+  margin-bottom: 2rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .radio {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    left: 2.4rem;
+    cursor: pointer;
+    height: 2.4rem;
+    width: 2.4rem;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  &:hover {
+    background-color: $colorPrimary;
+    color: white;
+    .radio {
+      border-color: white;
+      background-color: white;
+      &:checked {
+        background-color: black;
+      }
+    }
+  }
+  &:has(.radio:checked) {
+    background-color: $colorPrimary;
+    color: white;
+    .radio {
+      background-color: $colorSecondary;
+      border-color: white;
+    }
+  }
+}
+
+

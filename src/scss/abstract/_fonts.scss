@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100;600;900&display=swap");
 
 $baseSize: 10px;
+
+// Mobile Text
 
 $small: 1.4 * $baseSize;
 $text-xs: 1.8 * $baseSize;
@@ -17,3 +20,84 @@ $lineHeight-md: 2.64 * $baseSize;
 $lineHeight-lg: 3.36 * $baseSize;
 $lineHeight-lgs: 4.08 * $baseSize;
 $lineHeight-xl: 4.8 * $baseSize;
+
+@mixin textSmall() {
+  font-size: $small;
+  line-height: $lineHeight-small;
+}
+
+@mixin textXs() {
+  font-size: $text-xs;
+  line-height: $lineHeight-xs;
+}
+
+@mixin textSm() {
+  font-size: $text-sm;
+  line-height: $lineHeight-sm;
+}
+
+@mixin textMd() {
+  font-size: $text-md;
+  line-height: $lineHeight-md;
+}
+
+@mixin textLg() {
+  font-size: $text-lg;
+  line-height: $lineHeight-lg;
+}
+
+@mixin textLgs() {
+  font-size: $text-lgs;
+  line-height: $lineHeight-lgs;
+}
+
+@mixin textXl() {
+  font-size: $text-xl;
+  line-height: $lineHeight-xl;
+}
+
+// Desktop Text
+
+$lg-text-xs: 1.4 * $baseSize;
+$lg-text-sm: 2 * $baseSize;
+$lg-text-md: 2.8 * $baseSize;
+$lg-text-lg: 3.8 * $baseSize;
+$lg-text-lgs: 4.6 * $baseSize;
+$lg-text-xl: 7.4 * $baseSize;
+
+$lg-lineHeight-xs: 1.68 * $baseSize;
+$lg-lineHeight-sm: 2.4 * $baseSize;
+$lg-lineHeight-md: 3.36 * $baseSize;
+$lg-lineHeight-lg: 4.56 * $baseSize;
+$lg-lineHeight-lgs: 5.52 * $baseSize;
+$lg-lineHeight-xl: 8.88 * $baseSize;
+
+@mixin lg-textXs() {
+  font-size: $lg-text-xs;
+  line-height: $lg-lineHeight-xs;
+}
+
+@mixin lg-textSm() {
+  font-size: $lg-text-sm;
+  line-height: $lg-lineHeight-sm;
+}
+
+@mixin lg-textMd() {
+  font-size: $lg-text-md;
+  line-height: $lg-lineHeight-md;
+}
+
+@mixin lg-textLg() {
+  font-size: $lg-text-lg;
+  line-height: $lg-lineHeight-lg;
+}
+
+@mixin lg-textLgs() {
+  font-size: $lg-text-lgs;
+  line-height: $lg-lineHeight-lgs;
+}
+
+@mixin lg-textXl() {
+  font-size: $lg-text-xl;
+  line-height: $lg-lineHeight-xl;
+}

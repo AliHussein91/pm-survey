@@ -1,0 +1,48 @@
+@use "../../../../scss/abstract/" as *;
+
+footer {
+  background-color: white;
+  .container {
+    padding-top: 4rem;
+    padding-bottom: 2.4rem;
+    @include grid($gap: 2.4rem);
+    @include textSmall;
+    .copy-rights {
+      padding: 0 1.6rem;
+      width: 100%;
+      @include grid($justify: start, $gap: 2.4rem);
+      color: #1e1e1ecc;
+      .link-group {
+        display: flex;
+        gap: 1.2rem;
+        .link a {
+          color: #1e1e1ecc;
+          &:hover {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+    .details {
+      color: #1e1e1e80;
+      padding: 0 1.6rem;
+    }
+  }
+}
+
+@include pc {
+  footer {
+    @include grid();
+    .container {
+      max-width: 57.2%;
+      gap: 4rem;
+      padding: 4rem 0 2.4rem;
+      .copy-rights {
+        grid-template-columns: 1fr 1fr;
+        .link-group {
+          justify-self: end;
+        }
+      }
+    }
+  }
+}
