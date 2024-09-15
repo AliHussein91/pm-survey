@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [{
     path: '',
-    loadComponent: () => import('./components/home/home.component').then(r => r.HomeComponent),
-    pathMatch: 'full'
+    component: HomeComponent,
 },
 {
     path: 'survey/:id',
@@ -16,4 +16,7 @@ export const routes: Routes = [{
 {
     path: 'summary',
     loadComponent: () => import('./components/summary/summary.component').then(r => r.SummaryComponent)
+}, {
+    path: '**',
+    component: HomeComponent,
 }];
